@@ -1,1 +1,40 @@
-<p>page2 works !</p>
+<h1>Page 2</h1>
+<button (click)="getInfo()">Get Tatooine's facts again !</button>
+<div *ngIf="planetInfo$ | async as planetInfo">
+  <table>
+    <tr>
+      <th>Name</th>
+      <td>{{ planetInfo.name }}</td>
+    </tr>
+
+    <tr>
+      <th>Gravity</th>
+      <td>{{ planetInfo.gravity }}</td>
+    </tr>
+
+    <tr>
+      <th>Climate</th>
+      <td>{{ planetInfo.climate }}</td>
+    </tr>
+
+    <tr>
+      <th>Diameter</th>
+      <td>{{ planetInfo.diameter }}</td>
+    </tr>
+
+    <tr>
+      <th>Orbital period</th>
+      <td>{{ planetInfo.orbital_period }}</td>
+    </tr>
+
+    <tr>
+      <th>Rotation period</th>
+      <td>{{ planetInfo.rotation_period }}</td>
+    </tr>
+
+    <tr>
+      <th>Population</th>
+      <td>{{ planetInfo.population }}</td>
+    </tr>
+  </table>
+</div>
