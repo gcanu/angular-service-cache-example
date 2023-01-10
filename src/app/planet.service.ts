@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { shareReplay, switchMap, tap } from 'rxjs/operators';
+import { finalize, shareReplay, switchMap, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class PlanetService {
   tatooine$: Observable<any> = this._tatooine$.pipe(
     switchMap(() => this.http.get<any>('https://swapi.dev/api/planets/1')),
     tap((data) => console.log(data)),
-    shareReplay(1)
+    shareReplay(1),
   );
 
   constructor(private http: HttpClient) {}
