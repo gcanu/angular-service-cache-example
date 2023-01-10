@@ -3,12 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { shareReplay, switchMap, tap } from 'rxjs/operators';
 
-export interface Todo {
-  titre: string;
-  description: string;
-  fait: boolean;
-}
-
 @Injectable({
   providedIn: 'root',
 })
